@@ -2,10 +2,28 @@
 <html>
 <head>
   <title>Dom Projects</title>
+  <style>
+    .subscribe-button{
+      border:none;
+      background-color: black;
+      color:white;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 15px;
+      padding-right: 15px;
+      font-weight: bold;
+      border-radius: 50px;
+      cursor: pointer;
+      
+    }
+
+  </style>
 </head>
 <body>
   <p>YouTube Subscribe Button</p>
-  <button onclick="subscribe();" class="js-subscribe-button">Subscribe</button>
+
+  <button onclick="subscribe();" class="js-subscribe-button subscribe-button">Subscribe</button>
+  
   <script>
     function subscribe(){
        const buttonElement=document.querySelector('.js-subscribe-button');
