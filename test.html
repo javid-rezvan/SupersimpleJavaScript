@@ -7,24 +7,18 @@
     <title>Dom Project</title>
 </head>
 <body>
-    <p>Amazon Shipping Calculator </p>
-    <input placeholder="Cost of order" class="js-input" onkeydown="handleCostKeydown(event)";>
-    <button onclick="caluculateShipping();">Calculate</button>
-    <p class="js-result"></p>
+
+   
     <script> 
-     function caluculateShipping(){
-       inputElement=document.querySelector('.js-input');
-       if(inputElement.value <40){
-        document.querySelector('.js-result').innerHTML=`$${Number(inputElement.value)+10}`;
-       }else{
-        document.querySelector('.js-result').innerHTML=`$${inputElement.value}`;
-       }    
-     }
-     function handleCostKeydown(event){
-        if(event.key === 'Enter'){
-         caluculateShipping();
-     }   
-     }
+        const nums=[];    
+        function doubleArray(nums){       
+         const doubledArray=[];
+          for(let i=0;i<nums.length;i++){
+            doubledArray.push(nums[i]*2);
+          }
+          return doubledArray;
+        }
+       console.log(doubleArray([1,3,6]));
     </script>
 </body>
 </html>
