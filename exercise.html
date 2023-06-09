@@ -10,14 +10,14 @@
 <body>
   <p>Rock Paper Scissors</p>
 
-  <button  class="move-button" onclick="playGame('rock');">
+  <button  class="move-button js-event1">
     <img src="Requirements/rock-emoji.png" 
    class="move-icon"></button>
 
-  <button class="move-button" onclick="playGame('paper');">
+  <button class="move-button js-event2">
     <img src="Requirements/paper-emoji.png"  class="move-icon"></button>
 
-  <button class="move-button" onclick="playGame('scissors');">
+  <button class="move-button js-event3">
     <img src="Requirements/scissors-emoji.png"  class="move-icon"></button>
 
   <p class="js-result result"></p>
@@ -33,6 +33,7 @@
      document.querySelector('.js-result').innerHTML='';
      document.querySelector('.js-move').innerHTML='';
   ">Reset Score</button>
+  
   <button class="js-auto-play" onclick="
   autoPlay();">Auto Play</button>
   <script src="exerciseScript.js"></script>
