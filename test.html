@@ -7,15 +7,13 @@
     <title>Dom Project</title>
 </head>
 <body>
-
+  <button class="js-button">click</button>
    
     <script> 
-     setTimeout(function(){
-      console.log('timeout');
-      console.log('timeout2');
+     document.body.addEventListener('keydown',(event)=>{
+      console.log(event.key);
+     });
 
-     },3000)
-     console.log('next line');
     </script>
 </body>
 </html>
