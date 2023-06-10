@@ -5,65 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dom Project</title>
-    <style>
-      .todo-grid{
-        display: grid;
-        grid-template-columns: 200px 150px 100px;
-      }
-
-    </style>
 </head>
 <body>
-     <p>Todo List Practice 2</p>  
-        <input placeholder="Todo name" class="js-input">
-        <input placeholder="yyyy-mm-dd" type="date" class="js-date">
-        <button onclick="
-         renderTodoList();
-         addTodo();
-        ">Add</button>
-     <div class="js-array todo-grid"></div>
-    
-
+  <button class="js-button">click</button>
+   
     <script> 
-     const myArray=[
-        {name:'make dinner',
-         dueDate:'2022-12-22'
-        },
-        {name:'wash dishes',
-        dueDate:'2022-12-23'
-        }
-     ];
-  
-     renderTodoList();
-     function renderTodoList(){
-        let todoListHtml='';
-        for(let i=0;i< myArray.length;i++){
-             const todoObject=myArray[i]; 
-             const { name,dueDate}=todoObject;
-             const html=`
-             <div> ${name}</div>
-             <div>${dueDate}</div>
-              <button onclick="
-                myArray.splice(${i},1);
-                renderTodoList();
-                ">Delete</button></p>`;
-                todoListHtml+=html;      
-           }
-           document.querySelector('.js-array').innerHTML=todoListHtml;
-    }
-     function addTodo(){
-       inputElement=document.querySelector('.js-input');
-       dateElement=document.querySelector('.js-date');
-       const name=inputElement.value;
-       const dueDate=dateElement.value;
-       myArray.push({
-        name,dueDate
-       });
-       inputElement.value='';
-       dateElement.value='';
-       document.querySelector('.js-array').innerHTML=myArray; 
-       renderTodoList();
-     }
+     document.body.addEventListener('keydown',(event)=>{
+      console.log(event.key);
+     });
+
     </script>
 </body>
 </html>
