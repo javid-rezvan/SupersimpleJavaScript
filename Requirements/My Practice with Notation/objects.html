@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const product1={
+            name:'socks',
+            price:1090,
+            ['delivery-time']:'1 day'
+        };
+      
+        product1.newProperty='javid';
+        console.log(product1);
+        console.log(product1.newProperty);
+        console.log(typeof(product1));
+        console.log(product1['delivery-time']);
+
+
+        const product2 ={
+            name:'shirt',
+            'delivery-time':'1 day', //if we only have a string between the brackets the brackets are actually optional
+            rating:{
+                stars:4.5,
+                count:87
+            }
+        };
+        
+        console.log(product2);
+        console.log(product2.name); 
+        console.log(product2['delivery-time']); 
+        console.log(product2.rating.stars); 
+        console.log(product2.rating.count); 
+
+        const product3 ={
+            name:'shirt',
+            'delivery-time':'1 day', //if we only have a string between the brackets the brackets are actually optional
+            rating:{
+                stars:4.5,
+                count:87
+            },  
+
+            //another type of value we can put in an object is a function
+            func:function function1(){
+                console.log('function inside object');
+            }
+        };
+
+        console.log(product3);
+        console.log(product3.name); 
+        console.log(product3['delivery-time']); 
+        console.log(product3.rating.stars); 
+        product3.func();
+
+        /*when we save a function inside an object this is called a method
+        //console.log() is actually a method.console is an object provided by 
+        javascript and log is a function that is saved inside the console object
+        */
+       console.log(typeof console); //object
+       console.log(typeof console.log); //function
+
+       /*
+       Math.random()
+       Math is also an object provided by javascript and random is a function
+       saved inside the math object so we call Math.random a method as well.
+       */
+    </script>
+</body>
+</html>
