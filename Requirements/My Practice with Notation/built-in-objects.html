@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       /*
+       json and localStorage are built-in objects
+       json object: helps us to work with json(json means:javascript object notation).
+       json is similar to javascript object but has less features.
+       */
+
+       //javascript object
+
+       const product3 ={
+        name:'shirt',
+        'delivery-time':'1 day',
+        rating:{
+            stars:4.5,
+            count:87
+        },  
+        func:function function1(){
+            console.log('function inside object');
+        }
+    };
+
+    const product2 ={
+        name:'shirt',
+        'delivery-time':'1 day',
+        rating:{
+            stars:4.5,
+            count:87
+        }
+    };
+
+
+    /*json
+     {
+        "name":"shirt",
+        "delivry-time":"1 day",
+        "rating":{
+            "stars":4.5,
+            "count":87
+        }
+     }
+     So one differnce is that all properties and strings use double quotes in Json.
+     json does not support single quotes.another differnce is that json does not support function.
+
+     Why would we use json syntax instead of javascript object syntax?
+     A javascript object only makes sence in javascript.
+     On the other hand json syntax can be understood by almost every programming language.
+     so json syntax is more Universal.
+     we use json when we send data between computers and when we store data.
+
+     */
+     
+
+     /*
+     we have built-in json object that converts javascript object to json.
+     stringfy is a method of the json object.so it is a function that is saved inside this object
+     and we can call this function using brackets.
+     between the brackets we can give it a javascript object,we want to convert like product2 
+    
+     */
+
+     console.log(JSON.stringify(product2));
+     //  {"name":"shirt","delivery-time":"1 day","rating":{"stars":4.5,"count":87}}
+
+     /*
+      One thing to note about stringify is that it actually results in a string
+     */
+     console.log(typeof(JSON.stringify(product2)));
+
+     //Now this json string is ready to be send another computer or to be saved in storage.
+    </script>
+</body>
+</html>
