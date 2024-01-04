@@ -67,6 +67,62 @@
        Math is also an object provided by javascript and random is a function
        saved inside the math object so we call Math.random a method as well.
        */
+
+       /*
+        objects are refrences:
+        when we create this object the actual value is created somewhere in the computer's memory 
+        and this variable actually just gets a reference that points to that location in the computer's
+        memory this is like a shortcut on your computer a shortcut points to where the actual file or folder
+        is so there's no way to actually see this reference but just know that this is a reference and the 
+        object is somewhere else in the computer's memory so the reason it works this way is to make the 
+        language more efficient
+       */
+       const object1={
+        message:'hello'
+       };
+       const object2=object1;
+
+       /*
+       so this code doesn't actually make a copy of the object it just makes a copy of the reference.
+       that points to the object so this makes a language more efficient because if we had a really big
+       object here it's not good to copy the entire object over and over again instead JavaScript just 
+       copies the reference which is much faster this is called copy by reference.
+       */
+
+       object1.message='good job';
+       console.log(object1);
+       console.log(object2);
+       /*
+       so object 2 actually has the same reference as object one. 
+       they actually point to the same object in the computer's memory
+     
+       notice that we were able to change the message property even though we created
+       object 1 with const and that's because this variable just contains a reference that points to
+       the object so const prevents us from changing the reference in the variable but it doesn't prevent 
+       us from reaching into the reference and changing the object that it's pointing to
+
+       */
+
+       /*
+       we can't compare objects directly 
+       */
+       const object3={
+        message:'good job'
+       };
+       console.log(object1 === object2);
+       console.log(object1 === object3);
+       /*
+       true
+       false
+       object1 and object2 has the same refrence.so result of comparing object1 and object2 is true.
+       remember that when you're comparing two variables that contain objects you're actually comparing 
+       the references not the values inside.
+
+       it will tell us that these two objects(object1 and object3) are not equal to each other even though
+       they have these same values inside(message:'good job') and that's because remember objects are references
+       so object 3 also contains a reference and this code compares the references and not the values inside the object
+       so because object3 is a different reference than object1 that's why this code results in false.
+       */
     </script>
 </body>
 </html>
