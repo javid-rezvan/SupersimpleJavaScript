@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <button>Hello</button>
+   
+    <script>
+
+    //another buitl-in object in javascript is document object or DOM(document object model).
+    console.log(document.body);
+    /*
+    document.body is a very special property so this will literally get this body HTML element
+    and put it inside our JavaScript
+    */
+    console.log(typeof(document.body)); //object
+
+    /*
+    a really important thing to know is that when an HTML element is inside a JavaScript like this
+    the HTML element is converted into a JavaScript object.the example tell us that the body HTML 
+    element is just an object when it's inside JavaScript so just like any other object this has 
+    properties and methods we can use 
+
+    */
+    console.log(document.title); //DOM
+    //So document is a buit-in object that provided by javascript
+
+    document.body.innerHTML='HELLO';
+
+    /*
+    This code remove everything on the page and replaces it with a text hello.
+    if we save it will remove the button and just put hello.
+
+    here is a built-in object and this is the dot notation this means we're accessing
+    a property of the document object called body now body is also an object so we can
+    use the dot notation again to access a property of the body object called inner HTML
+    and finally we use an equal sign to change the inner HTML property to the string HELLO.
+
+    very very important:
+
+    but as you can see there's something very special about the inner HTML property
+    when we change this property it also changes the web page so this document object
+    and the web page are linked together.
+    it shows us that the document object represents or models the web page and that's 
+    why we call this feature the document object model or the Dom.
+
+    so the Dom is just this built-in document object and this object works the same way
+    as any other object.it contains properties like body and title that we can access using
+    the dot notation now the special thing about the document object is that it is linked to
+    the web page that means if we change certain properties in this object it will also change
+    the web page.
+    */
+
+    /*
+    so one useful property of the body element is innerHTML which we saw earlier.so the inner HTML
+    property controls all the HTML inside the body. that's why it's called inner HTML so if we access
+    this property it will give us all the HTML inside the body:
+    */
+    console.log(document.body.innerHTML);
+
+    /*
+    another feature of innerHTML is that we can replace this HTML with a new HTML code not just text
+    */
+    document.body.innerHTML='<button>hello</button>';
+
+    /*method:function saved inside an object
+
+    document.querySelector():
+    let us get any element from the page and put it inside Javascript.
+    */
+    document.querySelector('button');
+    console.log( document.querySelector('button'));
+
+    /*
+    document.queryselector lets us get any element from the page and put it inside our
+    JavaScript.between these brackets we're going to put a string this string tells JavaScript
+    which HTML element to get from the page so if we type button this will get the first button
+    element from the page and put it inside our JavaScript
+    */
+    /*very very important:
+     remember when an HTML element is inside JavaScript it's just a JavaScript object.
+     so this button element is also just an object and it has properties and methods we
+    can use. every HTML element actually has a property called inner HTML which lets us 
+    control the HTML inside the element so for this button element:
+    */
+    console.log(document.querySelector('button').innerHTML);
+    //hello
+
+    document.querySelector('button').innerHTML='Changed';
+
+    /*if we have more then 1 button in page?document.queryselector will only get the first button
+    on the page. how do we get this second button?
+    the solution is that we're going to add an attribute to this button called the class attribute
+
+    class attribute=adds a label
+
+    <button class="js-button">Second Button</button>
+
+    */
+     document.body.innerHTML='<button>Hello</button> <button class="js-button">Second button</button>';
+     document.querySelector("button").innerHTML="javid";
+     document.querySelector(".js-button").innerHTML="rezvan";
+
+     /*
+
+     so using a class attribute and then starting with a dot in query selector we can get any 
+     specific element from the page and put it in our JavaScript.by the way when we start with
+     a DOT this is called a class selector and this is also used in CSS to style elements with
+    a specific class in fact anything we use in CSS can also be used in this string and also a 
+    common practice is to start the class with JS Dash to make it clear that this class is being
+    used in JavaScript.
+     */
+
+     /*
+     so this second button is also just an object .and remember objects are values and we can save
+    them inside a variable so instead of console.log let's create a variable:
+     */
+    const buttonElement=document.querySelector(".js-button");
+    console.log(buttonElement);
+    //DOM combine js and HTML together.it givs js full control of the webpage.
+    </script>
+</body>
+</html>
