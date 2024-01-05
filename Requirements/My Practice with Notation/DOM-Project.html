@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Project</title>
+</head>
+<body>
+    <p>YouTube Subscribe Button</p>
+    <button class="js-subscribe-button" onclick="subscribe()">Subscribe</button>
+
+   <!--
+    how do we solve this problem when there are spaces around our text
+    to solve this we're going to use a different property of an HTML element
+    so instead of the innerHTML property we're going to use the property innerText.
+   -->
+
+    <button class="js-subscribe-button2" onclick="
+       const buttonElement2=document.querySelector('.js-subscribe-button2');
+       if(buttonElement2.innerText === 'Subscribe2'){
+                 buttonElement2.innerHTML='Subscribed2';
+       }else{
+                 buttonElement2.innerText='Subscribe2';
+       }
+       
+    ">Subscribe2</button>
+
+
+    <script>
+        function subscribe(){
+            const buttonElement=document.querySelector('.js-subscribe-button');
+            if(buttonElement.innerHTML === 'Subscribe'){
+                 buttonElement.innerHTML='Subscribed';
+            }else{
+                 buttonElement.innerHTML='Subscribe';
+            }        
+        }
+    </script>
+</body>
+</html>
