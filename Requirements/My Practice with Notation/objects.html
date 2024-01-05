@@ -123,6 +123,55 @@
        so object 3 also contains a reference and this code compares the references and not the values inside the object
        so because object3 is a different reference than object1 that's why this code results in false.
        */
+
+
+       //destruction
+
+       const object4={
+        message:'good morning',
+        price:799
+       };
+
+       const {message,price}=object4;
+       console.log(message);
+       console.log(price);
+       
+       //shorthand property
+
+       //we maked object5 with message variable and because property and value are the same
+       const object5={
+        //message:message,
+         message
+       };
+       console.log(object5);//now we have good morning in the console.
+
+       //shorthand method
+
+       const object6={
+        message,
+        method:function function1(){
+            console.log('method');
+        }
+      };
+       console.log(object6);
+       object6.method();
+     
+       //we can have this shortcut:
+       const object7={
+        message,
+       /* method:function function1(){
+            console.log('method');
+        }*/
+        method(){
+            console.log('method');
+        }
+      };
+       console.log(object7);
+       object7.method();
+
+       
+      
+       
     </script>
 </body>
 </html>
