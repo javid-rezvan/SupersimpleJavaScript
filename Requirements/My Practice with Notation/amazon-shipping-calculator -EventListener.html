@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>amazon-shipping-calculator</title>
+</head>
+<body>
+    <p>Amzazon Shipping Calculator</p>
+    <p>Orders under $40=+$10 shipping.</p>
+    <p>Orders over $40=FREE shipping.</p>
+
+    <input class="js-input" placeholder="Cost of order" onkeydown="handleCostKeydown(event);">
+    <p class="js-result"></p>
+    <script>
+        /*
+       clicks and keydowns are events
+       onclick and onkeydown are event listeners:
+       they check for events and runs JavaScript when those events happen
+
+
+       Event Listeners:
+
+       onclick      = click
+       onkeydown    = key press
+       onscroll     = scrolling
+       onmouseenter = hovering over
+       onmouseleave = stop hovering over
+       ...and many more
+        */
+
+        /*
+        Algorythem:
+
+        when we press a key check if the key is "Enter"
+        do the same thing as the calculate button
+
+        so how do we know what key we pressed ?
+        inside on keydown we're actually given a special object called event.
+        so this is an object that's provided to us by JavaScript and it contains
+        information about the event
+
+        Every event listener gets an event object.
+
+        <input class="js-input" placeholder="Cost of order" onkeydown="console.log(event);">
+        if we save and type in this text box it will show us that event is a object and inside
+        the object it has a bunch of information including the key that we typed:
+
+        <input class="js-input" placeholder="Cost of order" onkeydown="console.log(event.key);">
+
+        Result:if we type 25 and press enter
+        2
+        5
+        Enter
+
+
+        important:
+
+        <input class="js-input" placeholder="Cost of order" onkeydown="
+           if(event.key === 'Enter'){
+            calculate();
+           }
+         ">
+        it works.but if we want to put it in a function like this:
+
+         function handleCostKeydown(){
+            if(event.key === 'Enter'){
+                calculate();
+               }
+          }
+
+       and:
+       <input class="js-input" placeholder="Cost of order" onkeydown="handleCostKeydown();">
+
+       event does not exist inside this function so we have to put the event object into the
+       function and remember to put a value into a function we can use a parameter:
+
+            function handleCostKeydown(event){
+            if(event.key === 'Enter'){
+                calculate();
+               }
+          }
+          and:
+          <input class="js-input" placeholder="Cost of order" onkeydown="handleCostKeydown(event);">
+
+        */
+      
+      function handleCostKeydown(event){
+            if(event.key === 'Enter'){
+                calculate();
+               }
+          }
+
+
+      function calculate(){
+       const inputElement=document.querySelector('.js-input');
+       let cost=Number(inputElement.value);
+
+        if(cost < 40){
+            document.querySelector('.js-result').innerHTML=`$${cost+10}`;
+        }else{
+            document.querySelector('.js-result').innerHTML=`$${cost}`;
+        }
+      }
+
+ 
+      
+    </script>
+</body>
+</html>
