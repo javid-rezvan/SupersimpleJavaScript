@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>amazon-shipping-calculator</title>
+</head>
+<body>
+    <p>Amzazon Shipping Calculator</p>
+    <p>Orders under $40=+$10 shipping.</p>
+    <p>Orders over $40=FREE shipping.</p>
+    <input class="js-input" placeholder="Cost of order">
+    <button onclick="calculate();">Calculate</button>
+    <p class="js-result"></p>
+    <script>
+        /*
+        for input elements you'll notice that there is no HTML inside so for input elements
+        we're going to use a different property called value.
+
+        whenever we get a value from the DOM the value will be a string.
+        We have to manually convert string to number.javascript has a built-in function:
+        Number()
+
+        console.log(typeof(document.querySelector('.js-input').value));
+        result is:string
+        but:
+        console.log(typeof(Number(document.querySelector('.js-input').value)));
+        result is:number
+        */
+      function calculate(){
+       const inputElement=document.querySelector('.js-input');
+       let cost=Number(inputElement.value);
+
+        if(cost < 40){
+            document.querySelector('.js-result').innerHTML=`$${cost+10}`;
+        }else{
+            document.querySelector('.js-result').innerHTML=`$${cost}`;
+        }
+      }
+      
+    </script>
+</body>
+</html>
