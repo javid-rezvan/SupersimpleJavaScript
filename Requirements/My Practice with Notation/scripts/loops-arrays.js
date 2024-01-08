@@ -11,3 +11,16 @@ function doubleArray(nums){
 }
 
 console.log(doubleArray([2,4,6,10,0,8]));
+
+//Another way to loop array
+['make dinner',
+'wash dishes',
+'watch youtube'
+].forEach(function(value){
+    console.log(value);
+});
+
+const array1=[1,'salam','rezvan'];
+array1.forEach(function(value){
+  console.log(value);
+});
