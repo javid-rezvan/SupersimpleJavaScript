@@ -32,13 +32,23 @@
     
     ">Rock</button>
     <button>Paper</button>
-    <button>Scissor</button>   
+    <button onclick="auto()">Scissor</button>   
     <script>
-      const function1=function(){
-         console.log('salam dobareh');
+      let isAutoPlaying=false;
+      let intervalid;
+      function auto() {
+         if(!isAutoPlaying){
+            intervalid=setInterval(()=>{
+               console.log('javid rezvan');
+               isAutoPlaying=true;
+            },2000);
+          
+         }else{
+            clearInterval(intervalid);
+            isAutoPlaying=false;
+         }
       }
-      function1();
-      console.log(typeof(function1));
+    
     </script>
 </body>
 </html>
