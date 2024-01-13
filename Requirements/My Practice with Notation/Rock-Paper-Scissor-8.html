@@ -13,17 +13,17 @@
 
     <p class="js-result"></p> <!--new line-->
     <p class="js-move"></p>   <!--new line-->
-    <p class="js-score"></p> 
+    <p class="js-score"></p>
 
     <button onclick="
         score.wins=0;
         score.losses=0;
-        score.ties=0; 
-        localStorage.removeItem('score');
-        updateScoreElement(); 
+        score.ties=0;
+        //localStorage.removeItem('score');
+        updateScoreElement();
     ">Reset Score</button>
     <script>
-       
+
        /* let score= JSON.parse(localStorage.getItem('score'));
         if(score === null){
           score={
@@ -33,19 +33,19 @@
           };
         }
 
-        
+
         instead of checking if a value is equal to null we can just use the not operator as a shortcut.
          now also from the booleans lesson we have an even shorter shortcut for doing this:
         so notice here that this code basically sets a default value if the score doesn't exist.in the booleans lesson we learned a technique called the default operator which is exactly what we need here:
 
         */
-        let score= JSON.parse(localStorage.getItem('score')) ||  
+        let score= JSON.parse(localStorage.getItem('score')) ||
         {
             wins:0,
             losses:0,
             ties:0
         };
-        updateScoreElement(); 
+        updateScoreElement();
         function pickComputerMove(){
             let computerMove='';
             const randomNumber=Math.random();
@@ -66,28 +66,28 @@
                 if (computerMove === 'rock'){
                     result='Tie.';
                 }else if(computerMove === 'paper'){
-                    result='You lose.'                   
+                    result='You lose.'
                 }else{
-                    result='You win.'                    
+                    result='You win.'
                 }
             }else if(playerMove === 'paper'){
                 if (computerMove === 'rock'){
-                    result='You win.';                    
+                    result='You win.';
                 }else if(computerMove === 'paper'){
                     result='Tie.'
-                    
+
                 }else{
-                    result='You lose.'                 
+                    result='You lose.'
                 }
             }else{
                 if (computerMove === 'rock'){
                     result='You lose.';
-                    
+
                 }else if(computerMove === 'paper'){
                     result='You win.'
-                   
+
                 }else{
-                    result='Tie.'                   
+                    result='Tie.'
                 }
             }
             if(result === 'You win.'){
@@ -98,18 +98,18 @@
                 score.ties +=1;
             }
 
-       
+
             localStorage.setItem('score',JSON.stringify(score));
             document.querySelector('.js-result').innerHTML=result; //new line
             document.querySelector('.js-move').innerHTML=`You ${playerMove} -Computer ${computerMove}`; //new line
-            updateScoreElement();    
+            updateScoreElement();
         }
-        
-       
+
+
         function updateScoreElement(){
             document.querySelector('.js-score').innerHTML=`Wins:${score.wins} ,Losses:${score.losses} ,Ties:${score.ties}`;//new line
         }
-        
+
     </script>
 </body>
 </html>
