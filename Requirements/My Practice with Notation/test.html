@@ -7,29 +7,28 @@
 
 </head>
 <body>
-  <p>Amazon Shipping Calculator</p>
-  <p>Orders under $40=+$10 shipping</p>
-  <p>Orders over  $40=Free shipping</p>
-  <input class="js-input " placeholder="Cost of Order" onkeydown="handleKeydown(event);">
-  <button onclick="calculte()">Calculate</button>
-  <p class="js-p"></p>
-  <script >
-    function calculte(){
+  <input class="js-input " placeholder="Cost of Order">
+  <button onclick="addTodoList()">Add</button>
+  <div class="js-todo-list"></div>
+  <script>
+   const todoList=['make dinner','meet chef'];
+   renderTodoList();
+   function addTodoList(){
       const inputElement=document.querySelector('.js-input');
-      const  pElement=document.querySelector('.js-p');
-      let cost=Number(inputElement.value);
-      if(cost < 40){
-          cost=cost+10;
-      }
-      pElement.innerHTML=`$${cost}`;
-
+      const name=inputElement.value;
+      todoList.push(name);
+      inputElement.value='';
+      renderTodoList();
+  }
+   function renderTodoList(){
+      let todoListHtml='';
+      for(let i=0;i<todoList.length;i++){
+         const todo=todoList[i];
+         const html=`<p>${todo}</p>`;
+         todoListHtml += html;
     }
-
-    function handleKeydown(){
-      if(event.key === 'Enter'){
-        calculte();
-      }
-    }
+        document.querySelector('.js-todo-list').innerHTML=todoListHtml;
+   }
   </script>
 </body>
 </html>
