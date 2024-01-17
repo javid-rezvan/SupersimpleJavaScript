@@ -34,7 +34,8 @@
       .score{
          margin-top: 60px;
       }
-      .reset-score-button{
+      .reset-score-button,
+      .auto-play-button{
            background-color: white;
            border: none;
            font-size: 15px;
@@ -48,7 +49,7 @@
     <button onclick="playGame('rock')" class="move-button"><img src="images/rock-emoji.png" class="move-icon"></button>
     <button onclick="playGame('paper')" class="move-button"><img src="images/paper-emoji.png" class="move-icon"></button>
     <button onclick="playGame('scissor')" class="move-button"><img src="images/scissor-emoji.png" class="move-icon"></button>
-
+    
     <p class="js-result result"></p>
     <p class="js-move"></p>
     <p class="js-score score"></p>
@@ -60,6 +61,7 @@
 
         updateScoreElement();
     " class="reset-score-button">Reset Score</button>
+    <button onclick="autoPlay();" class="auto-play-button">Auto Play</button>
     <script>
         let score= JSON.parse(localStorage.getItem('score')) ||
         {
@@ -136,6 +138,31 @@
             document.querySelector('.js-score').innerHTML=`Wins:${score.wins} ,Losses:${score.losses} ,Ties:${score.ties}`;
         }
 
+        let isAutoPlay=false;
+        let intervalId;       
+        function autoPlay(){
+            if(!isAutoPlay){
+                intervalId=setInterval(()=>{
+                    const playerMove=pickComputerMove();
+                    playGame(playerMove);
+                    isAutoPlay=true;
+                },1000);
+            }else{
+                clearInterval(intervalId);
+                isAutoPlay=false;
+            }
+            
+        }
+       array1=['make dinner','wash dished']
+       array1.forEach((value)=>{
+         console.log(value);
+       });
+
+       ['make dinner','wash dished','do do']
+       .forEach((param,index)=>{
+           console.log(param);
+           console.log(index);
+       });
     </script>
 </body>
 </html>
