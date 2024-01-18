@@ -82,13 +82,29 @@
       let todoListHtml='';
       todoList.forEach((todoObject,index)=>{
         const{name,dueDate}=todoObject;
-        const html=`<div>${name}</div>  <div>${dueDate}</div><button class="css-delete"
-        onclick="todoList.splice(${index},1);renderTodoList();">Delete</button>`;
+        const html=`<div>${name}</div>  <div>${dueDate}</div><button class="css-delete js-delete">Delete</button>`;
         todoListHtml += html;
 
       });
         document.querySelector('.js-todo-list').innerHTML=todoListHtml;
+        document.querySelectorAll('.js-delete').forEach((value,index)=>{
+           value.addEventListener('click',()=>{
+            todoList.splice(index,1);
+            renderTodoList();
+          })
+        })
    }
+
+  /* array1=[1,-2,-6,8,7,10,11];
+   array2=[];
+   array1.filter((value,index)=>{
+    if(value >0)
+       array2.push(value);
+   });
+   console.log(array2);*/
+
+   console.log([1,7,-3,-6,8,10].map(value=>value*2));
+   
   </script>
 </body>
 </html>
