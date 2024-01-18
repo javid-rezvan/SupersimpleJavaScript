@@ -48,10 +48,15 @@
  <div class="todo-input-grid">
       <input class="js-input css-input" placeholder="Cost of Order">
       <input class="js-date css-date"  placeholder="yyyy-mm-dd" type="date">
-      <button class="css-button" onclick="addTodoList()">Add</button>
+      <button class="css-button js-button" >Add</button>
  </div>
   <div class="js-todo-list css-todo-list"></div>
   <script>
+    buttonElement=document.querySelector('.js-button');
+    buttonElement.addEventListener('click',()=>{
+      addTodoList();
+    })
+
    const todoList=[
       {
         name:'make dinner',
