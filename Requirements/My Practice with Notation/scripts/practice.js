@@ -7,7 +7,7 @@ document.querySelector('.js-result').innerHTML=`Wins:${score.Wins} Losses:${scor
 
 function pickComputerMove(){
   const randomNumber=Math.random();
-  let computerMove='';
+  const computerMove;
   if(randomNumber >=0 && randomNumber <1/3){
     computerMove='rock';
   }else if(randomNumber >=1/3 && randomNumber < 2/3){
@@ -60,5 +60,4 @@ function playGame(playerMove){
   }else {
     score.Ties+=1;
   }
-  document.querySelector('.js-result').innerHTML=`Wins:${score.Wins} Losses:${score.Loses} Ties:${score.Ties}`
  }
